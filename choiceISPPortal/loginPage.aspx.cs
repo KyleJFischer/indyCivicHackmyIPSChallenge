@@ -8,7 +8,7 @@ using System.Data.Sql;
 using System.Data.SqlTypes;
 using System.Web.UI.WebControls;
 using System.IO;
-using System.Object;
+//using System.Object;
 
 
 public partial class loginPage : System.Web.UI.Page
@@ -49,22 +49,34 @@ public partial class loginPage : System.Web.UI.Page
     }
     protected void Button1_Click(object sender, EventArgs e)
     {
-        bool success = IsAuthenticated(TextBox1.Text, TextBox2.Text);
-
+       // bool success = IsAuthenticated(TextBox1.Text, TextBox2.Text);
+        bool success = true;
         if (success)
         {
             bool adminTest = false;
+            if (TextBox1.Text == "admin")
+            {
+                adminTest = true;
+            }
+            else
+            {
+                adminTest = false;
+            }
             //Check if Admin
             //Redirect to admin page
-            if (adminTest)
+            if (!adminTest)
             {
                 //save id and admin priveledges
                 //redirect to admin page
+                Session["admin"] = false;
+                Response.Redirect("parentsMainPage.aspx");
             }
             else
             {
                 //Save id
                 //redirect to parent page from id
+                Session["admin"] = true;
+                Response.Redirect("adminStudentPage.aspx");
                 
             }
             

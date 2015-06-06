@@ -8,8 +8,8 @@ using System.Data.Sql;
 using System.Data.SqlTypes;
 using System.Web.UI.WebControls;
 using System.IO;
-using System.Object;
-using System
+//using System.Object;
+//using System
 
 public partial class comments : System.Web.UI.Page
 {
@@ -31,6 +31,8 @@ public partial class comments : System.Web.UI.Page
 
     protected void addComment(string userName, string msg)
     {
+
+
 
         using (SqlConnection cn = new SqlConnection("Data source=(local); Initial Catalog=INT422Assignment1; Integrated Security=SSPI;"))
         using (SqlCommand cmd = cn.CreateCommand())

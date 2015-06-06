@@ -11,6 +11,8 @@
     <div>
     
     </div>
+        <asp:Table ID="Table1" runat="server" Height="372px" Width="494px">
+        </asp:Table>
     </form>
 </body>
 </html>
