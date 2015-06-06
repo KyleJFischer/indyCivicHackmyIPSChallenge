@@ -8,7 +8,7 @@ Student
 	ID, First, Last, Street, City, State, ZIP, Date of Birth, Gender, IEP, Race, Ethnicity, prefLanguage, curGrade, curSchool, siblingID, PerformingArts
 	
 Parent
-	ParentID, First, Last, middleInitial, phoneNum, email, address
+	ParentID, First, Last, middleInitial, phoneNum, email, address, password, admin
 	
 ParentChildCombo
 	ParentID, StudentID
@@ -20,10 +20,10 @@ Application
 	ApplicationID, StudentID, programID, position
 
 Documents
-	docID, studentID, File, fileType
+	docID, studentID, File, fileType, fileExtension
 
 Communication
-	comID, applicationID, timeStamp, msgLog
+	comID, applicationID, timeStamp, msgLog, parentID
 	
 RequiredDocs
 	requiredID, ProgramID, fileType
